@@ -1,8 +1,14 @@
+.site-wrap {
+  display: grid;
+}
 .header {
   background-color: #282c34;
   min-height: 100px;
 }
-.header nav a {
+.navbar a {
   color: white;
   margin-right: 10px;
+}
+.navbar{
+  background-color: #756410;
 }
