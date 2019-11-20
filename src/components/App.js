@@ -3,17 +3,23 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [names, setNames] = useState([]);
+  const [data, setData] = useState([]);
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character/1')
       .then(res => res.json())
       .then(data => {
-        setNames(data)
+        setData(data)
       })
   }, []);
   return (
     <div>
-      {names.name}
+      <img src={data.image} />
+      <ul>
+        <li>{data.name}</li>
+        <li>{data.status}</li>
+        <li>{data.species}</li>
+        <li>{data.gender}</li>
+      </ul>
     </div>
   )
 
