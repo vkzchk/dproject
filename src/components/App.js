@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 import './App.css';
+import Header from './header'
 
-function App() {
+const App = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character/1')
@@ -13,6 +14,7 @@ function App() {
   }, []);
   return (
     <div>
+      <Header />
       <img src={data.image} />
       <ul>
         <li>{data.name}</li>
