@@ -12,14 +12,16 @@ const Content = () => {
       })
   }, []);
   return (
-    <div>
-      <img src={data.image} />
-      <ul>
-        <li>{data.name}</li>
-        <li>{data.status}</li>
-        <li>{data.species}</li>
-        <li>{data.gender}</li>
-      </ul>
+    <div className="content">
+      <div>
+        <img src={data.image} />
+        <ul>
+          <li>{data.name}</li>
+          <li>{data.status}</li>
+          <li>{data.species}</li>
+          <li>{data.gender}</li>
+        </ul>
+      </div>
     </div>
   )
 
