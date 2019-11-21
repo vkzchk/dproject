@@ -1,26 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-import './App.css';
+import './content.css';
 
 const Content = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character/1')
+    fetch('https://rickandmortyapi.com/api/character/')
       .then(res => res.json())
       .then(data => {
-        setData(data)
+        setData(
+          JSON.stringify(data)
+        )
       })
   }, []);
   return (
     <div className="content">
-      <div>
-        <img src={data.image} />
-        <ul>
-          <li>{data.name}</li>
-          <li>{data.status}</li>
-          <li>{data.species}</li>
-          <li>{data.gender}</li>
-        </ul>
+      <div className="items">
+        <span>{data}</span>
       </div>
     </div>
   )

@@ -1,0 +1,9 @@
+.content {
+    grid-column: 2 / -1;
+    grid-row: 2 / -1;
+    border: 2px solid red;
+    background-color: aquamarine;
+  }
+  .items {
+    border: 2px solid blue;
+  }

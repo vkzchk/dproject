@@ -1,0 +1,11 @@
+.header {
+    grid-column: 1 / -1;
+    border: 2px solid red;
+    background-image: url('../../assets/images/header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #282c34;
+    height: 300px;
+    
+  }
