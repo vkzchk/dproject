@@ -7,19 +7,22 @@ const Content = () => {
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character/')
       .then(res => res.json())
-      .then(data => { setPersons(data) })
+      .then(data => { setPersons(data.results) })
   }, []);
   return (
     <div className="content">
       <div className="items">
         {
           persons.map(person => (
-            <div>
-              <div>{person.image}</div>
-              <div>{person.name}</div>
-              <div>{person.status}</div>
-              <div>{person.species}</div>
-              <div>{person.gender}</div>
+            <div className="item">
+              <ul>
+                <img src={person.image} />
+                <li>Name: {person.name}</li>
+                <li>Status: {person.status}</li>
+                <li>Species: {person.species}</li>
+                <li>Type: {person.type}</li>
+                <li>Gender: {person.gender}</li>
+              </ul>
             </div>
           ))
         }

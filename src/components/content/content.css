@@ -7,3 +7,10 @@
   .items {
     border: 2px solid blue;
   }
+  .items li {
+    list-style-type: none;
+  }
+  .items .item {
+    border: 2px solid rgb(136, 21, 88);
+    width: 400px;
+   }
