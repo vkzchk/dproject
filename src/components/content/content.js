@@ -20,7 +20,7 @@ const Content = () => {
                 <li>Name: {person.name}</li>
                 <li>Status: {person.status}</li>
                 <li>Species: {person.species}</li>
-                <li>Type: {person.type}</li>
+                {person.type ? <li>Type: {person.type}</li> : null}
                 <li>Gender: {person.gender}</li>
               </ul>
             </div>

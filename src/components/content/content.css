@@ -6,11 +6,17 @@
   }
   .items {
     border: 2px solid blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
   }
   .items li {
     list-style-type: none;
   }
   .items .item {
     border: 2px solid rgb(136, 21, 88);
+    background-color: #5F9EA0;
     width: 400px;
-   }
+    margin: 5px;
+  }
