@@ -6,6 +6,19 @@ const Contact = () => {
   const [name, setName] = useState('')
   const [inputText, setInputText] = useState('')
   const [email, setEmail] = useState('')
+  const submit = e => {
+    e.preventDefault()
+    fetch(`http://myproject.com/contactus/`, {
+      method: 'POST',
+      body: JSON.stringify(
+        {
+          name: name,
+          email: email,
+          message: inputText
+        })
+    })
+      .then(res => res.json())
+  }
   return (
     <div className="contact">
       <p>Contact me</p>
@@ -38,7 +51,11 @@ const Contact = () => {
           onChange={e => setInputText(e.target.value)}
         />
         <br />
-        <button type="submit">Send</button>
+        <button type="submit"
+          onClick={submit}
+        >
+          Send
+        </button>
       </form>
     </div>
   )
