@@ -1,17 +1,18 @@
 import React from 'react';
 
 import './App.css';
-import Header from '../header/header'
-import Content from '../content/content'
-import Navbar from '../navbar/navbar'
+import Header from '../header/header';
 
-const App = () => {
+import Footer from '../footer/footer';
+
+
+const App = ({ children }) => {
 
   return (
     <div className="site-wrap">
       <Header />
-      <Navbar />
-      <Content />
+      {children}
+      <Footer />
     </div>
   )
 
