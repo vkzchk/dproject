@@ -2,7 +2,10 @@
     grid-column: 1 / -1;
     grid-row: 2 / -1;
     border: 2px solid red;
-    background-color: aquamarine;
+    background-color: #282c34;
+    background-image: url('../../assets/images/contact.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 760px;
   }
   p {
