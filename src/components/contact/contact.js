@@ -8,7 +8,7 @@ const Contact = () => {
   const [email, setEmail] = useState('')
   const submit = e => {
     e.preventDefault()
-    fetch(`http://myproject.com/contactus/`, {
+    fetch(`http://qzwxsdcvfrty.com//myproject/users/contactus/`, {
       method: 'POST',
       body: JSON.stringify(
         {
@@ -18,6 +18,7 @@ const Contact = () => {
         })
     })
       .then(res => res.json())
+      .catch(e => console.log(e))
   }
   return (
     <div className="contact">

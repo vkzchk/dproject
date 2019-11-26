@@ -4,19 +4,26 @@ import './portfolio.css';
 import Navprojects from '../navprojects/navprojects'
 
 const Portfolio = () => {
-  const [pageIndex, setPageIndex] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
   const [persons, setPersons] = useState([]);
+  const [pageLimit, setPageLimit] = useState(1);
   useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character/?page=${pageIndex}`)
+    fetch(`https://rickandmortyapi.com/api/character/?page=${currentPage}`)
       .then(res => res.json())
-      .then(data => { setPersons(data.results) })
-  }, [pageIndex]);
+      .then(data => {
+        setPersons(data.results)
+        setPageLimit(data.info.pages)
+      })
+  }, [currentPage]);
+
+  const pageNumber = new Array(pageLimit).fill(null).map((it, index) => index + 1)
   return (
     <Fragment>
       <Navprojects />
       <div className="portfolio">
-        <button type="button" onClick={() => pageIndex > 1 ? setPageIndex(pageIndex - 1) : 1}>Prev Page</button>
-        <button type="button" onClick={() => pageIndex < 25 ? setPageIndex(pageIndex + 1) : 25}>Next Page</button>
+        <div className="paginate">
+          {pageNumber.map(page => <span onClick={() => setCurrentPage(page)}>{page}</span>)}
+        </div>
         <div className="items">
           {
             persons.map(person => (
@@ -35,7 +42,7 @@ const Portfolio = () => {
           }
         </div>
       </div>
-    </Fragment>
+    </Fragment >
   )
 
 }
