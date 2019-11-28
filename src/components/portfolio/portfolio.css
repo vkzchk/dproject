@@ -1,8 +1,10 @@
 .portfolio {
     grid-column: 3 / -1;
     grid-row: 2 / -1;
+    min-height: 800px;
     border: 2px solid red;
     background-color: aquamarine;
+    background-image: url('../../assets/images/ram.jpg');
     padding: 3px;
   }
   .items {
@@ -21,4 +23,45 @@
     background-color: #5F9EA0;
     width: 400px;
     margin: 5px;
+  }
+  .paginate {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  .paginate ul {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0; 
+    background-color: rgba(247, 244, 242, 0.2);
+  }
+  
+  .paginate li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 0.1px solid black;
+  }
+  
+  .paginate a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 6px 20px;
+  }
+  
+  .paginate li:hover,
+  .paginate li.active,
+  .paginate li.selected {
+    border: 0.5px solid black;
+    margin: -0.5px;
+    background-color: rgba(234, 237, 238, 0.2);
   }

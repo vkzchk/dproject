@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import Paginator from 'react-hooks-paginator';
+import ReactPaginate from 'react-paginate';
 
 import './portfolio.css';
 import Navprojects from '../navprojects/navprojects'
@@ -19,22 +19,26 @@ const Portfolio = () => {
       })
   }, [currentPage]);
 
-  const pageNumbers = new Array(pages).fill(null).map((it, index) => index + 1)
+  const handlePageClick = (e) => {
+    setCurrentPage(e.selected);
+  };
 
   return (
     <Fragment>
       <Navprojects />
       <div className="portfolio">
-        <Paginator
-          totalRecords={pageNumbers.length}
-          pageLimit={pages}
-          pageNeighbours={2}
-          pagePrevText='« Prev'
-          setOffset={() => { }}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          pageNextText='Next »'
-        />
+        <div className="paginate">
+          <ReactPaginate
+            previousLabel={'previous'}
+            nextLabel={'next'}
+            breakLabel={'...'}
+            breakClassName={'break-me'}
+            pageCount={pages}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={e => handlePageClick(e)}
+          />
+        </div>
         <div className="items">
           {
             persons.map(person => (
