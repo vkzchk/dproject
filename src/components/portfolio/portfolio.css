@@ -22,31 +22,3 @@
     width: 400px;
     margin: 5px;
   }
-.paginate {
-  background-color: dimgray;
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  align-items: stretch;
-  height: 100%;
-  width: 800px;
-  
-}
-.paginate span {
-  color: #fff;
-  
-  text-decoration: none;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
-  cursor: pointer;
-}
-.paginate span:hover,
-.paginate span.active {
-  border: 0.5px solid black;
-  margin: -0.5px;
-  background-color: rgba(0,0,0,.2);
-}
