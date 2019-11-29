@@ -4,18 +4,23 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 import './assets/index.css';
-import App from './components/app/App';
-import Home from './components/home/home';
-import Contact from './components/contact/contact';
-import Portfolio from './components/portfolio/portfolio';
+import App from './scenes/home/components/app/App';
+import Homepage from './scenes/home/components/homepage/homepage';
+import Contactform from './scenes/form/components/contactform/contactform';
+import Portfoliopage from './scenes/portfolio/components/portfoliopage/portfoliopage';
+
+import Fetchapi from './scenes/portfolio/components/fetchapi/fetchapi';
 
 ReactDOM.render((
   <BrowserRouter>
     <App>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/portfolio' component={Portfolio} />
-        <Route exact path='/contact' component={Contact} />
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/portfolio' component={Portfoliopage} />
+        <Route exact path='/contact' component={Contactform} />
+        <Portfoliopage>
+          <Route exact path='/portfolio/fetchapi' component={Fetchapi} />
+        </Portfoliopage>
       </Switch>
     </App>
   </BrowserRouter>

@@ -1,10 +1,10 @@
-.portfolio {
+.fetchapi {
     grid-column: 3 / -1;
     grid-row: 2 / -1;
     min-height: 800px;
     border: 2px solid red;
     background-color: aquamarine;
-    background-image: url('../../assets/images/ram.jpg');
+    background-image: url('../../../../assets/images/ram.jpg');
     padding: 3px;
   }
   .items {

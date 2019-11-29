@@ -1,10 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ReactPaginate from 'react-paginate';
 
-import './portfolio.css';
-import Navprojects from '../navprojects/navprojects'
+import './fetchapi.css';
 
-const Portfolio = () => {
+const Fetchapi = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [persons, setPersons] = useState([]);
@@ -20,13 +19,12 @@ const Portfolio = () => {
   }, [currentPage]);
 
   const handlePageClick = (e) => {
-    setCurrentPage(e.selected);
+    setCurrentPage(e.selected + 1);
   };
 
   return (
     <Fragment>
-      <Navprojects />
-      <div className="portfolio">
+      <div className="fetchapi">
         <div className="paginate">
           <ReactPaginate
             previousLabel={'previous'}
@@ -62,4 +60,4 @@ const Portfolio = () => {
 
 }
 
-export default Portfolio;
+export default Fetchapi;

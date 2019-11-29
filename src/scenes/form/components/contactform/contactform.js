@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import './contact.css';
+import './contactform.css';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,7 +19,7 @@ const validationSchema = Yup.object().shape({
     .required("Required field"),
 })
 
-const Contact = () => {
+const Contactform = () => {
 
   return (
     <div className="contact">
@@ -87,4 +87,4 @@ const Contact = () => {
   )
 }
 
-export default Contact;
+export default Contactform;
