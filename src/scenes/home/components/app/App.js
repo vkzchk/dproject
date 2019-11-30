@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import styles from './App.module.css';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 
@@ -8,7 +8,7 @@ import Footer from '../footer/footer';
 const App = ({ children }) => {
 
   return (
-    <div className="site-wrap">
+    <div className={styles.siteWrap}>
       <Header />
       {children}
       <Footer />

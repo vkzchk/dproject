@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import './navprojects.css';
+import styles from './navprojects.module.css';
 
 
 const Navprojects = () => {
   return (
-    <nav className="navprojects">
+    <nav className={styles.navprojects}>
       <ul>
         <li><Link to="/portfolio/fetchapi">Fetch data from API</Link></li>
         <li><Link to="/portfolio/dummyone">Dummy 1</Link></li>

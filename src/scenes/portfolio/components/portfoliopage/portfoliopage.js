@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 
-import './portfoliopage.css';
+import styles from './portfoliopage.module.css';
 import Navprojects from '../navprojects/navprojects';
 
 const Portfoliopage = ({ children }) => {
   return (
     <Fragment>
       <Navprojects />
-      <div className="p-page">
+      <div className={styles.pPage}>
         {children}
       </div>
     </Fragment>

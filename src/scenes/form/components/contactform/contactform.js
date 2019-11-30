@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import './contactform.css';
+import styles from './contactform.module.css';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -22,7 +22,7 @@ const validationSchema = Yup.object().shape({
 const Contactform = () => {
 
   return (
-    <div className="contact">
+    <div className={styles.contact}>
       <p>Contact me</p>
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
@@ -40,7 +40,7 @@ const Contactform = () => {
         }}
       >
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className={styles.contactForm} onSubmit={handleSubmit}>
             <label>
               Name:
               <input
@@ -50,7 +50,7 @@ const Contactform = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
-                className={touched.name && errors.name ? "has-error" : null}
+                className={touched.name && errors.name ? styles.hasError : null}
               />
             </label>
             <br />
@@ -62,7 +62,7 @@ const Contactform = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
-              className={touched.email && errors.email ? "has-error" : null}
+              className={touched.email && errors.email ? styles.hasError : null}
             />
             <br />
             <label htmlFor="text">Text: </label>
@@ -73,7 +73,7 @@ const Contactform = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.message}
-              className={touched.message && errors.message ? "has-error" : null}
+              className={touched.message && errors.message ? styles.hasError : null}
             />
             <br />
             <button type="submit" disabled={isSubmitting}>

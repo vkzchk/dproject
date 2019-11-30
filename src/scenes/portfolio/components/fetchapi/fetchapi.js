@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import ReactPaginate from 'react-paginate';
 
-import './fetchapi.css';
+import styles from './fetchapi.module.css';
 
 const Fetchapi = () => {
 
@@ -24,8 +24,8 @@ const Fetchapi = () => {
 
   return (
     <Fragment>
-      <div className="fetchapi">
-        <div className="paginate">
+      <div className={styles.fetchapi}>
+        <div className={styles.paginate}>
           <ReactPaginate
             previousLabel={'previous'}
             nextLabel={'next'}
@@ -37,10 +37,10 @@ const Fetchapi = () => {
             onPageChange={e => handlePageClick(e)}
           />
         </div>
-        <div className="items">
+        <div className={styles.items}>
           {
             persons.map(person => (
-              <div className="item">
+              <div className={styles.item}>
                 <ul>
                   <img alt="" src={person.image} />
                   <li>Name: {person.name}</li>
