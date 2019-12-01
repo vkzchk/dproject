@@ -18,8 +18,8 @@ const Fetchapi = () => {
       })
   }, [currentPage]);
 
-  const handlePageClick = (e) => {
-    setCurrentPage(e.selected + 1);
+  const handlePageClick = (page) => {
+    setCurrentPage(page.selected + 1);
   };
 
   return (
@@ -35,6 +35,7 @@ const Fetchapi = () => {
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={e => handlePageClick(e)}
+            activeLinkClassName={styles.selected}
           />
         </div>
         <div className={styles.items}>
