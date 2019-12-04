@@ -8,6 +8,7 @@ import App from './scenes/home/components/app/App';
 import Homepage from './scenes/home/components/homepage/homepage';
 import Contactform from './scenes/form/components/contactform/contactform';
 import Portfoliopage from './scenes/portfolio/components/portfoliopage/portfoliopage';
+import MouseTracker from './scenes/portfolio/components/renderprops/components/mouseTracker'
 
 import Fetchapi from './scenes/portfolio/components/fetchapi/fetchapi';
 
@@ -20,6 +21,7 @@ ReactDOM.render((
         <Route exact path='/contact' component={Contactform} />
         <Portfoliopage>
           <Route exact path='/portfolio/fetchapi' component={Fetchapi} />
+          <Route exact path='/portfolio/renderprops' component={MouseTracker} />
         </Portfoliopage>
       </Switch>
     </App>

@@ -11,7 +11,7 @@ const validationSchema = Yup.object().shape({
     .required("Required field"),
   email: Yup.string()
     .email("Must be a valid email address")
-    .max(200, "Must be shorter than 200")
+    .max(100, "Must be shorter than 200")
     .required("Required field"),
   message: Yup.string()
     .min(5, "Must have a character")
@@ -29,7 +29,7 @@ const Contactform = () => {
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setSubmitting(true);
-          fetch(`http://qzwxsdcvfrty.com//myproject/users/contactus/`, {
+          fetch(`http://qzwxsdcvfrty.com/myproject/users/contactus/`, {
             method: 'POST',
             body: JSON.stringify(values)
           })
